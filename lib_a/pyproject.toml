@@ -1,0 +1,24 @@
+[build-system]
+requires = [
+  "setuptools>=63.0.0",
+  "wheel"
+]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "lib_a"
+version = "0.0.1"
+description = "lib_a"
+dependencies = [
+    "joblib"
+]
+requires-python = ">=3.9"
+
+[project.optional-dependencies]
+dev = [
+  "pytest==7.3.0",
+  "build==0.10.0"
+]
+
+[tool.setuptools]
+py-modules = []

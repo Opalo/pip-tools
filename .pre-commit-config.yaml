@@ -1,0 +1,12 @@
+---
+files: .(toml)$
+repos:
+  - repo: https://github.com/jazzband/pip-tools
+    rev: 7.3.0
+    hooks:
+      - id: pip-compile
+        name: pip-compile prod
+        args: [-o, pyproject.lock, --generate-hashes, --strip-extras, --quiet]
+      - id: pip-compile
+        name: pip-compile dev
+        args: [-o, pyproject.dev.lock, --generate-hashes, --strip-extras, --quiet, --extra, dev]
